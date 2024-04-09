@@ -87,55 +87,52 @@ int exe04(){
 }
 
 
-/*int exe05(){
+int exe05(){
 
     //calculadora simples
 
     char operacao;
-    int result, n1, n2;
+    double n1, n2, resultado;
+    
+    printf("Escolha a operação (+, -, * ou /): ");
+    scanf("%c", &operacao);
 
-    std::cout << "Digite a operação: ";
-    std::cin >> operacao;
+    printf("Digite o 1° número: ");
+    scanf("%lf", &n1);
 
-    std::cout << "Digite o 1° número: ";
-    std::cin >> n1;
-
-    std::cout << "Digite o 2° número: ";
-    std::cin >> n2;
+    printf("Digite o 2° número: ");
+    scanf("%lf", &n2);
 
 
-    switch (operacao) {
-
-    case '+';
-    result = n1 + n2;
-    std::cout >> "O resultado é: " << result;
-    break;
-
-    case '-';
-    result = n1 - n2;
-    std::cout >> "O resultado é: " << result;
-    break;
-
-    case '*';
-    result = n1 * n2;
-    std::cout >> "O resultado é: " << result;
-    break;
-
-    case '/';
+    switch(operacao){
+        case '+':
+        resultado = n1 + n2;
+        printf("Resultado: %.2lf\n", resultado);
+        break;
+        case '-':
+        resultado = n1 - n2;
+        printf("Resultado: %.2lf\n", resultado);
+        break;
+        case '*':
+        resultado = n1 * n2;
+        printf("Resultado: %.2lf\n", resultado);
+        break;
+        case '/':
         if(n2 != 0){
-        result = n1 + n2;
-        std::cout >> "O resultado é: " << result;
-        }else{
-        std::cout >> "Não é possível dividir por 0";
+        resultado = n1 / n2;
+        printf("Resultado: %.2lf \n", resultado);
+        } else {
+            printf("Não é possível fazer divisão por zero!");
+        }
+        break;
+        default:
+        printf("Operação inválida.");
+        break;
     }
-    break;
 
-    default:
-    std::cout >> "Operação inválida";
-    break; }
 
     return 0;
-}*/
+}
 
 
 int exe06(){
@@ -156,29 +153,34 @@ int exe06(){
     return 0;
 }
 
-/*int exe07(){
+int exe07(){
 
     //conversão temperatura
 
-    int temperatura, conversao;
+    char conversao;
+    double temperatura, resultado;
 
-    std::cout << "Escolha sua conversão (F ou C): ";
-    std::cin >> conversao;
+    printf("Escolha a conversão (C ou F): ");
+    scanf("%c", &conversao);
 
-    std::cout << "Digite a temperatura: ";
-    std::cin >> temperatura;
+    printf("Digite a temperatura: ");
+    scanf("%lf", &temperatura);
 
-    if(conversao == F){
-        std::cout >>  "Temperatura em Fahrenheit:" >> (temperatura * 1.8) + 32.;
-    } else if (conversao == C) {
-        std::cout >> "Temperatura em Celcius:" >> (temperatura - 32) / 1.8
-    } else {
-        std::cout << "Digite uma operação válida";
+    switch(conversao){
+        case 'C':
+        resultado = (temperatura-32)/1.8;
+        printf("Resultado da conversão: %.2lf\n", resultado);
+        break;
+        case 'F':
+        resultado = (temperatura * 1.8)+32;
+        printf("Resultado da conversão: %.2lf\n", resultado);
+        break;
     }
+
 
     return 0;
 }
-*/
+
 
 
 int exe08(){
@@ -193,7 +195,7 @@ int exe08(){
     printf("Digite sua altura: ");
     scanf("%d", &altura);
 
-    int imc = peso / (altura * altura)
+    int imc = peso / (altura * altura);
 
     if(imc < 18.5){
         printf("Categoria: Abaixo do peso \n");
@@ -209,21 +211,6 @@ int exe08(){
 }
 
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 int main(){
     //exe01();
@@ -232,7 +219,7 @@ int main(){
     //exe04();
     //exe05();
     //exe06();
-    //exe07();
+    exe07();
     //exe08();
     //exe09();
     //exe10();
