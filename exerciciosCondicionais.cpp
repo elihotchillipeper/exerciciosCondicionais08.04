@@ -187,25 +187,46 @@ int exe08(){
 
     //imc
 
-    int peso, altura;
+    float peso, altura, imc;
 
     printf("Digite seu peso: ");
-    scanf("%d", &peso);
+    scanf("%f", &peso);
 
     printf("Digite sua altura: ");
-    scanf("%d", &altura);
+    scanf("%f", &altura);
 
-    int imc = peso / (altura * altura);
+    imc = peso / (altura * altura);
+
+    printf("Seu imc é: %2.f\n", imc);
 
     if(imc < 18.5){
-        printf("Categoria: Abaixo do peso \n");
+        printf("Abaixo do peso. \n"); 
     } else if (imc >= 18.5 && imc < 25){
-        printf("Categoria: Peso normal \n");
-    } else if (imc >= 25 && imc < 30){
-        printf("Categoria: Sobrepeso \n");
+        printf("Peso normal. \n");
+    }else if (imc >= 25 && imc < 30){
+        printf("Acima do peso. \n");
+    }else{
+        printf("Obesidade. \n");
     }
 
+    return 0;
+}
 
+int exe09(){
+    
+    int x, y;
+
+    printf("Insira a coorenada x: ");
+    scanf("%d", &x);
+
+    printf("Insira a coorenada y: ");
+    scanf("%d", &y);
+
+    if(x > 0 && y > 0){
+        printf("O ponto (%d, %d) está no primeiro quadrante. \n", x, y);
+    }else if(x < 0 && y < 0){
+        printf("O ponto (%d, %d) está no segundo quadrante. \n", x, y);
+    }
 
     return 0;
 }
@@ -219,9 +240,9 @@ int main(){
     //exe04();
     //exe05();
     //exe06();
-    exe07();
+    //exe07();
     //exe08();
-    //exe09();
+    exe09();
     //exe10();
     //exe11();
     //exe12();
