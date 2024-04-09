@@ -226,7 +226,33 @@ int exe09(){
         printf("O ponto (%d, %d) está no primeiro quadrante. \n", x, y);
     }else if(x < 0 && y < 0){
         printf("O ponto (%d, %d) está no segundo quadrante. \n", x, y);
+    }else if(x > 0 && y < 0){
+        printf("O ponto (%d, %d) está no terceiro quadrante. \n", x, y);
+    }else if(x == 0 && y == 0){
+        printf("O ponto está na origem. \n");
     }
+
+    return 0;
+}
+
+int exe10(){
+
+    double saldo, retirar, saldoFinal;
+
+    saldo = 100;
+    saldoFinal = saldo - retirar;
+
+    printf("Qual quantia deseja retirar? ");
+    scanf("%lf", &retirar);
+
+    saldoFinal = saldo - retirar;
+
+    if(saldo >= retirar){
+        printf("Pode fazer uma retirada! O valor restante será de: %lf - %lf == %2.lf \n", saldo, retirar, saldoFinal);
+    } else{
+        printf("Saldo insulficiente! \n");
+    }
+
 
     return 0;
 }
@@ -242,8 +268,8 @@ int main(){
     //exe06();
     //exe07();
     //exe08();
-    exe09();
-    //exe10();
+    //exe09();
+    exe10();
     //exe11();
     //exe12();
     //exe13();
