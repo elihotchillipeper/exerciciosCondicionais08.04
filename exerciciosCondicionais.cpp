@@ -183,6 +183,10 @@ int exe06(){
 
 
 
+ 
+
+
+
 
 
 int main(){
