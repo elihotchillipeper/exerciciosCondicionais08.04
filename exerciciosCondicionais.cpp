@@ -181,9 +181,45 @@ int exe06(){
 */
 
 
+int exe08(){
+
+    //imc
+
+    int peso, altura;
+
+    printf("Digite seu peso: ");
+    scanf("%d", &peso);
+
+    printf("Digite sua altura: ");
+    scanf("%d", &altura);
+
+    int imc = peso / (altura * altura)
+
+    if(imc < 18.5){
+        printf("Categoria: Abaixo do peso \n");
+    } else if (imc >= 18.5 && imc < 25){
+        printf("Categoria: Peso normal \n");
+    } else if (imc >= 25 && imc < 30){
+        printf("Categoria: Sobrepeso \n");
+    }
+
+
+
+    return 0;
+}
 
 
  
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -197,6 +233,12 @@ int main(){
     //exe05();
     //exe06();
     //exe07();
+    //exe08();
+    //exe09();
+    //exe10();
+    //exe11();
+    //exe12();
+    //exe13();
 
 }
 
