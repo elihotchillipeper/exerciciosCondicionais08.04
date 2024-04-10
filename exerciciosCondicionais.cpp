@@ -239,7 +239,7 @@ int exe10(){
 
     double saldo, retirar, saldoFinal;
 
-    saldo = 100;
+    saldo = 100.00;
     saldoFinal = saldo - retirar;
 
     printf("Qual quantia deseja retirar? ");
@@ -248,7 +248,7 @@ int exe10(){
     saldoFinal = saldo - retirar;
 
     if(saldo >= retirar){
-        printf("Pode fazer uma retirada! O valor restante será de: %lf - %lf == %2.lf \n", saldo, retirar, saldoFinal);
+        printf("Pode fazer uma retirada! O valor restante será de: %lf - %lf = %2.lf \n", saldo, retirar, saldoFinal);
     } else{
         printf("Saldo insulficiente! \n");
     }
@@ -257,10 +257,91 @@ int exe10(){
     return 0;
 }
 
+int exe11(){
+
+    int leads;
+
+    printf("Leads recebidas: ");
+    scanf("%d", &leads);
+
+    if(leads <= 5){
+        printf("Quantia baixa! \n");
+    } else if(leads >= 6 && leads <= 10) {
+        printf("Quantia espereada. \n");
+    }else{
+        printf("Qunatia alta! \n");
+    }
+
+    return 0;
+}
+
+
+int exe12(){
+
+    double nota1, nota2, nota3, media, presenca;
+
+
+    printf("Insira a 1° nota: ");
+    scanf("%lf", &nota1);
+
+    printf("Insira a 2° nota: ");
+    scanf("%lf", &nota2);
+
+    printf("Insira a 3° nota: ");
+    scanf("%lf", &nota3);
+
+    printf("Porcentagem de presença: ");
+    scanf("%lf", &presenca);
+
+    media = nota1 + nota2 + nota3 /3;
+
+    if(media >= 7 && presenca == 100){
+        printf("Aprovado. Parabéns! \n");
+    } else if(media >= 7 && presenca >= 75 && presenca < 100){
+        printf("Aprovado. \n");
+    } else if(media < 7 && media >= 5 && presenca > 75){
+        printf("Recuperação! \n");
+    }else if(media < 7 && media >= 5 && presenca < 75){
+        printf("Reprovado! \n");
+    }else if(media < 5 && media <= 100){
+        printf("Reprovado! \n");
+    }
+
+    return 0;
+}
+
+
+
+int exe13(){
+
+    double notaAtual, notaAprovacao, notaRec, presenca;
+
+    printf("Insira a nota final do aluno: ");
+    scanf("%lf", &notaAtual);
+
+    printf("Insira a nota do aluno na recuperação: ");
+    scanf("%lf", &notaRec);
+
+    printf("Porcentagem da presença do aluno: ");
+    scanf("%lf", &presenca);
+
+    notaAprovacao = notaRec + notaAtual;
+
+    if(notaAprovacao >= 10 && presenca >= 75){
+        printf("Aprovado! \n");
+    } else if(notaAprovacao < 10) {
+        printf("Reprovado! \n");
+    }
+
+    return 0;
+}
+
+
+
 
 
 int main(){
-    //exe01();
+    exe01();
     //exe02();
     //exe03();
     //exe04();
@@ -269,7 +350,7 @@ int main(){
     //exe07();
     //exe08();
     //exe09();
-    exe10();
+    //exe10();
     //exe11();
     //exe12();
     //exe13();
